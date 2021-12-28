@@ -1,0 +1,436 @@
+// 定义变量
+$mColor: #1890ff;
+$white: #fff;
+
+// 字体颜色
+@mixin t-color($color: #3c4353) {
+  color: $color;
+}
+
+// 字体
+@mixin f-size($size: 14px) {
+  font-size: $size;
+  line-height: $size;
+}
+
+// 对齐方式
+@mixin t-align($align: center) {
+  text-align: $align;
+}
+
+// 边框
+@mixin border($col: #ccd3e6, $num: 1px, $solid: solid) {
+  border: $num $solid $col;
+  box-sizing: border-box;
+}
+
+// 定位
+@mixin location($type: relative) {
+  position: $type;
+}
+
+// 鼠标指针样式
+@mixin mouse($type: pointer) {
+  cursor: $type;
+}
+
+// 省略
+@mixin el-sl($num) {
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: $num;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+// 多于的显示省略号
+@mixin el-eh($num) {
+  text-overflow: ellipsis;
+  -webkit-line-clamp: $num;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+// 间距
+@mixin m-step($direction: bottom, $num: 20px) {
+  margin-#{$direction}: $num;
+}
+
+@mixin p-step($direction: bottom, $num: 20px) {
+  padding-#{$direction}: $num;
+}
+
+// 背景颜色
+.bg {
+  background: #f5f7fa;
+}
+
+.bg-white {
+  background: $white;
+}
+
+// 字体颜色
+.white {
+  color: $white;
+}
+
+// 可点击文字
+.t-link {
+  @include t-color(#1890ff);
+}
+
+.t-gray29 {
+  @include t-color(#292929);
+}
+
+// 主要文字
+.t-gray {
+  @include t-color(#3c4353);
+}
+
+// 常规文字
+.t-gray59 {
+  @include t-color(#838a9d);
+}
+
+// 占位文字
+.t-graya6 {
+  @include t-color(#a6aab8);
+}
+
+// 边框
+.border {
+  @include border(#ccd3e6, 1px, solid);
+}
+
+// 虚线 边框
+.border-dashed {
+  @include border(#ccd3e6, 1px, dashed);
+}
+
+// 分割线
+// .t-grayd9 {
+//   @include t-color(#E9E9E9)
+// }
+
+// 列表中状态文字的颜色
+.t-primary {
+  @include t-color(#1890ff);
+}
+// 成功
+.t-success {
+  @include t-color(#26d28d);
+}
+// 警告
+.t-warning {
+  @include t-color(#f5bb4a);
+}
+// 错误
+.t-error {
+  @include t-color(#ff5d5d);
+}
+// 关闭
+.t-info {
+  @include t-color(#b6c2d6);
+}
+
+// 组要文字 hover
+.t-primary-hover:hover {
+  @include t-color(#1890ff);
+}
+
+// 字体
+.f12 {
+  @include f-size(12px);
+}
+
+.f14 {
+  @include f-size(14px);
+}
+
+.f16 {
+  @include f-size(16px);
+}
+
+.f18 {
+  @include f-size(18px);
+}
+
+.f20 {
+  @include f-size(20px);
+}
+
+// 加粗
+.b {
+  font-weight: bolder;
+}
+
+// 对齐方式
+.t-c {
+  @include t-align(center);
+}
+
+.t-l {
+  @include t-align(left);
+}
+
+.t-r {
+  @include t-align(right);
+}
+
+// 定位
+.relative {
+  @include location(relative);
+}
+
+.absolute {
+  @include location(absolute);
+}
+
+.fixed {
+  @include location(fixed);
+}
+
+// 鼠标指针样式
+.c-p {
+  @include mouse(pointer);
+}
+
+.c-d {
+  @include mouse(default);
+}
+
+// 省略
+.el-sl {
+  @include el-sl(1);
+}
+.el-sl-2 {
+  @include el-sl(2);
+}
+.el-sl-3 {
+  @include el-sl(3);
+}
+//多余显示省略号
+.el-eh {
+  @include el-eh(1);
+}
+// 间距
+
+// 筛选条件控件间隔
+.m-0 {
+  @include m-step(left, 0);
+  @include m-step(right, 0);
+  @include m-step(top, 0);
+  @include m-step(bottom, 0);
+}
+
+.m-r-8 {
+  @include m-step(right, 8px);
+}
+.m-l-8 {
+  @include m-step(left, 8px);
+}
+.m-t-8 {
+  @include m-step(top, 8px);
+}
+.m-b-8 {
+  @include m-step(bottom, 8px);
+}
+
+.m-t-12 {
+  @include m-step(top, 12px);
+}
+
+.m-l-12 {
+  @include m-step(left, 12px);
+}
+
+.m-b-12 {
+  @include m-step(bottom, 12px);
+}
+
+.m-r-12 {
+  @include m-step(right, 12px);
+}
+
+.m-b-14 {
+  @include m-step(bottom, 14px);
+}
+
+.m-t-14 {
+  @include m-step(top, 14px);
+}
+
+.m-r-14 {
+  @include m-step(right, 14px);
+}
+.m-l-14 {
+  @include m-step(left, 14px);
+}
+.m-l-16 {
+  @include m-step(left, 16px);
+}
+
+.m-b-16 {
+  @include m-step(bottom, 16px);
+}
+
+.m-t-16 {
+  @include m-step(top, 16px);
+}
+
+.m-r-16 {
+  @include m-step(right, 16px);
+}
+
+.m-b-20 {
+  @include m-step(bottom, 20px);
+}
+
+.m-t-20 {
+  @include m-step(top, 20px);
+}
+//
+.p-t-20 {
+  @include p-step(top, 20px);
+}
+
+.p-b-20 {
+  @include p-step(bottom, 20px);
+}
+
+.p-r-5 {
+  @include p-step(right, 5px);
+}
+.p-l-12 {
+  @include p-step(left, 12px);
+}
+.p0 {
+  padding: 0;
+}
+
+// 分页组件间距
+.p-page {
+  @include p-step(top, 24px);
+  @include p-step(bottom, 24px);
+  @include p-step(right, 0px);
+  @include p-step(left, 24px);
+}
+
+//行高
+.l-h-24 {
+  line-height: 24px;
+}
+
+.l-h-18 {
+  line-height: 18px;
+}
+
+.l-h-16 {
+  line-height: 18px;
+}
+// 浮动
+.f-l {
+  float: left;
+}
+
+.f-r {
+  float: right;
+}
+
+/* 元素类型 */
+.dis-block {
+  display: block !important;
+}
+
+.dis-none {
+  display: none !important;
+}
+
+.dis-inBlock {
+  display: inline-block !important;
+}
+
+// 清除浮动
+.clear:after {
+  content: '';
+  display: block;
+  height: 0;
+  visibility: hidden;
+  clear: both;
+}
+
+// 强制换行
+.change-wrap {
+  word-wrap: break-word;
+}
+
+// 旋转
+.rotate180 {
+  transform: rotate(180deg);
+  transition: all 0.2s ease-out;
+}
+
+// 高度
+.h100 {
+  height: 100%;
+}
+
+// 宽度度
+.w100 {
+  width: 100%;
+}
+// 宽度度
+.w80 {
+  width: 80%;
+}
+// 转圈圈
+.Icon {
+  font-size: 20px;
+  cursor: pointer;
+}
+.Icon:hover {
+  animation: ani-demo-spin 4s linear infinite;
+}
+
+@keyframes ani-demo-spin {
+  from {
+    transform: rotateZ(0deg);
+  }
+  to {
+    transform: rotateZ(360deg);
+  }
+}
+
+// margin-top
+.mt20 {
+  margin-top: 20px;
+}
+
+// 上传图片后隐藏按钮
+.hide-upload-btn {
+  .el-upload.el-upload--picture-card {
+    display: none;
+  }
+}
+.echartsTitle {
+  font-weight: 700;
+  color: #3c4353;
+  line-height: 16px;
+  font-size: 16px;
+}
+
+// 服务申请 表单下的input select
+.serviceApplicetion .box {
+  .el-select {
+    width: 280px;
+    .el-input {
+      width: 100%;
+    }
+  }
+  .el-input {
+    width: 280px;
+  }
+  .el-input-number .el-input {
+    width: 130px;
+  }
+}

@@ -1,7 +1,6 @@
 <template>
   <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js + TypeScript App"/>
+    <div class="test-viewport">测试转换</div>
 
     <!-- vant -->
     <van-button type="primary">主要按钮</van-button>
@@ -15,12 +14,21 @@
 
 <script lang="ts">
 import { defineComponent } from 'vue';
-import HelloWorld from '@/components/HelloWorld.vue'; // @ is an alias to /src
 
 export default defineComponent({
   name: 'Home',
   components: {
-    HelloWorld,
   },
 });
 </script>
+
+<style lang="less" scoped>
+.test-viewport {
+  width: 750px;
+  height: 100px;
+  font-size: 40px;
+  text-align: center;
+  line-height: 100px;
+  background: #13b5b1;
+}
+</style>
