@@ -2,156 +2,136 @@
 @white: #fff;
 
 // 字体颜色
-@t-color($color: #3c4353) {
-  color: $color;
+.t-color(@color: #323232) {
+  color: @color;
 }
 
-// 字体
-@mixin f-size($size: 14px) {
-  font-size: $size;
-  line-height: $size;
+// 字体 大小
+.f-size(@size: 22px) {
+  font-size: @size;
+  line-height: @size;
 }
 
 // 对齐方式
-@mixin t-align($align: center) {
-  text-align: $align;
-}
-
-// 边框
-@mixin border($col: #ccd3e6, $num: 1px, $solid: solid) {
-  border: $num $solid $col;
-  box-sizing: border-box;
+.t-align(@align: center) {
+  text-align: @align;
 }
 
 // 定位
-@mixin location($type: relative) {
-  position: $type;
-}
-
-// 鼠标指针样式
-@mixin mouse($type: pointer) {
-  cursor: $type;
+.location(@type: relative) {
+  position: @type;
 }
 
 // 省略
-@mixin el-sl($num) {
+.el-sl(@num) {
   text-overflow: ellipsis;
   display: -webkit-box;
-  -webkit-line-clamp: $num;
+  -webkit-line-clamp: @num;
   -webkit-box-orient: vertical;
   overflow: hidden;
 }
 
-// 间距
-@mixin m-step($direction: bottom, $num: 20px) {
-  margin-#{$direction}: $num;
+// 间距 - margin
+.m-step(@direction: bottom, @num: 30px) {
+  // margin-@direction: @num;
 }
 
-@mixin p-step($direction: bottom, $num: 20px) {
-  padding-#{$direction}: $num;
+// 间距 - padding
+.p-step(@direction: bottom, @num: 30px) {
+  // padding-{@direction}: @num;
 }
 
 
-
-// 背景颜色
-.bg {
-  background: #f5f7fa;
-}
-
+// 背景 - 白
 .bg-white {
-  background: $white;
+  background: @white;
 }
 
-// 字体颜色
-.white {
-  color: $white;
+// 文字 - 黑
+.t-black {
+  .t-color(#323232)
 }
 
-// 可点击文字
-.t-link {
-  @include t-color(#1890ff);
-}
-
-// 主要文字
+// 文字 - 灰
 .t-gray {
-  @include t-color(#3c4353);
+  .t-color(#A0A0A0);
 }
 
-
-// 边框
-.border {
-  @include border(#ccd3e6, 1px, solid);
+// 文字 - 黄
+.t-yellow {
+  .t-color(#FF8833);
 }
 
-// 虚线 边框
-.border-dashed {
-  @include border(#ccd3e6, 1px, dashed);
+// 文字 - 白
+.t-white {
+  .t-color(@white);
 }
 
-// 字体
-.f12 {
-  @include f-size(12px);
+// 字体 - 22
+.f22 {
+  .f-size(22px);
 }
 
-// 加粗
-.b {
-  font-weight: bolder;
+// 字体 - 28
+.f28 {
+  .f-size(28px);
+}
+
+// 字体 - 32
+.f32 {
+  .f-size(32px);
+}
+
+// 字体 - 36
+.f36 {
+  .f-size(36px);
 }
 
 // 对齐方式
 .t-c {
-  @include t-align(center);
+  .t-align(center)
 }
 
 .t-l {
-  @include t-align(left);
+  .t-align(left);
 }
 
 .t-r {
-  @include t-align(right);
+  .t-align(right);
 }
 
 // 定位
 .relative {
-  @include location(relative);
+  .location(relative);
 }
 
 .absolute {
-  @include location(absolute);
+  .location(absolute);
 }
 
 .fixed {
-  @include location(fixed);
-}
-
-// 鼠标指针样式
-.c-p {
-  @include mouse(pointer);
-}
-
-.c-d {
-  @include mouse(default);
+  .location(fixed);
 }
 
 // 省略
 .el-sl {
-  @include el-sl(1);
+  .el-sl(1);
 }
-.el-sl-2 {
-  @include el-sl(2);
-}
-.el-sl-3 {
-  @include el-sl(3);
-}
-// 间距
 
-// 筛选条件控件间隔
+// 间隔 margin
 
-.m-r-8 {
-  @include m-step(right, 8px);
+// 间隔 padding
+.p-t-30 {
+  .p-step(top, 30px);
 }
-.m-t-12 {
-  @include m-step(top, 12px);
+.p-r-30 {
+  .p-step(right, 30px);
+}
+.p-b-30 {
+  .p-step(bottom, 30px);
+}
+.p-l-30 {
+  .p-step(left, 30px);
 }
 
 // 浮动
@@ -163,19 +143,6 @@
   float: right;
 }
 
-/* 元素类型 */
-.dis-block {
-  display: block !important;
-}
-
-.dis-none {
-  display: none !important;
-}
-
-.dis-inBlock {
-  display: inline-block !important;
-}
-
 // 清除浮动
 .clear:after {
   content: '';
@@ -183,4 +150,17 @@
   height: 0;
   visibility: hidden;
   clear: both;
+}
+
+/* 元素类型 */
+.dis-block {
+  display: block;
+}
+
+.dis-none {
+  display: none;
+}
+
+.dis-inBlock {
+  display: inline-block;
 }

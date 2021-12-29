@@ -13,6 +13,8 @@
     <!-- play -->
     <play />
 
+    <!-- 100000÷1.13×0.1=8547元 -->
+
     <!-- 开启底部安全区适配 -->
     <van-number-keyboard safe-area-inset-bottom />
   </van-config-provider>
@@ -40,4 +42,5 @@ export default defineComponent({
 </script>
 
 <style lang="less" scoped>
+
 </style>
