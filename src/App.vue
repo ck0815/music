@@ -2,7 +2,7 @@
   <!-- 全局主题 -->
   <van-config-provider :theme-vars="themeVars">
     <!-- 开启顶部安全区适配 -->
-    <van-nav-bar safe-area-inset-top />
+    <!-- <van-nav-bar safe-area-inset-top /> -->
     
     <!-- nav -->
     <header-tab />
@@ -13,21 +13,24 @@
     <!-- play -->
     <play />
 
-    <!-- 100000÷1.13×0.1=8547元 -->
-
     <!-- 开启底部安全区适配 -->
-    <van-number-keyboard safe-area-inset-bottom />
+    <!-- <van-number-keyboard safe-area-inset-bottom /> -->
   </van-config-provider>
 </template>
 
 <script lang="ts">
 import { defineComponent } from 'vue' 
-
+// 头部
 import HeaderTab from './components/HeaderTab.vue';
+// 播放
 import Play from './components/Play.vue';
 
 export default defineComponent({
-  components: { HeaderTab ,Play },
+  components: { 
+    HeaderTab,
+    Play
+  },
+  
   setup() {
     // themeVars 内的值会被转换成对应 CSS 变量
     // 比如 sliderBarHeight 会转换成 `--van-slider-bar-height`

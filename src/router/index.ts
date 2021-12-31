@@ -68,9 +68,8 @@ const router = createRouter({
 })
 
 // 路由拦截
- router.beforeEach((to,from)=>{
-  console.log('to :>> ', to, from);
-})
-console.log(router);
-
+//  router.beforeEach((to,from)=>{
+  // console.log('to :>> ', to, from);
+// })
+// console.log(router);
 export default router
